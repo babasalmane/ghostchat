@@ -6,13 +6,15 @@ import hashlib
 import signal  
 import os  
 
+max_messages = 20
+Port=5000
+
+
+
 app = Flask(__name__)  
 app.config['SECRET_KEY'] = os.urandom(24).hex()  
 socketio = SocketIO(app, async_mode='eventlet', cors_allowed_origins="*")  
-
 messages = [] 
-max_messages = 20
-Port=5000
 
 def nuclear_wipe(signum, frame):  
     global messages  
@@ -58,7 +60,7 @@ def void_gate():
         </style>  
     </head>  
     <body>  
-        <h1>💬 GHOST CHAT CLOUD 💀</h1>  
+        <h1>💬 GHOST CHAT 💀</h1>  
         <div id="messages"></div>  
         <input type="text" id="msgInput" placeholder="Type + Enter to send">  
 
