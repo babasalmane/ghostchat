@@ -120,4 +120,4 @@ def sync():
     emit('full_sync', messages[-max_messages:])  
 
 if __name__ == '__main__':  
-    socketio.run(app, host='0.0.0.0', port= Port)
+    socketio.run(app, host='0.0.0.0', port= Port, debug=False, allow_unsafe_werkzeug=True)
